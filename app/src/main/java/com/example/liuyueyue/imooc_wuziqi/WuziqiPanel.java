@@ -21,6 +21,7 @@ import java.util.List;
  */
 
 public class WuziqiPanel extends View {
+    private String aa="123";
     private int mPanelWidth;
     private float mLineHeight;
     private int MAX_LINE = 10;
@@ -294,6 +295,7 @@ public class WuziqiPanel extends View {
     private static final String INSTANCE_GAME_OVER="instance_game_over";
     private static final String INSTANCE_WHITE_ARRAY="instance_white_array";
     private static final String INSTANCE_BLACK_ARRAY="instance_black_array";
+    private static final String INSTANCE_ISWHITE="instance_iswhite";
 
 
 
@@ -304,6 +306,7 @@ public class WuziqiPanel extends View {
         bundle.putBoolean(INSTANCE_GAME_OVER,mIsGameOver);
         bundle.putParcelableArrayList(INSTANCE_WHITE_ARRAY,mWhiteArray);
         bundle.putParcelableArrayList(INSTANCE_BLACK_ARRAY,mBlackArray);
+        bundle.putBoolean(INSTANCE_ISWHITE,mIsWhite);
         return bundle;
     }
 
@@ -315,6 +318,7 @@ public class WuziqiPanel extends View {
             mIsGameOver = bundle.getBoolean(INSTANCE_GAME_OVER);
             mWhiteArray = bundle.getParcelableArrayList(INSTANCE_WHITE_ARRAY);
             mBlackArray = bundle.getParcelableArrayList(INSTANCE_BLACK_ARRAY);
+            mIsWhite=bundle.getBoolean(INSTANCE_ISWHITE);
             super.onRestoreInstanceState(bundle.getParcelable(INSTANCE));
             return;
         }
