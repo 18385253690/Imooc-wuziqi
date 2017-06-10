@@ -54,8 +54,8 @@ public class WuziqiPanel extends View {
         mPaint.setDither(true);
         mPaint.setStyle(Paint.Style.STROKE);
 
-        mWhitePiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_w2);
-        mBlackPiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_b1);
+        mWhitePiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_w2,null);
+        mBlackPiece = BitmapFactory.decodeResource(getResources(), R.drawable.stone_b1,null);
 
     }
 
@@ -92,11 +92,9 @@ public class WuziqiPanel extends View {
     }
 
     public boolean onTouchEvent(MotionEvent event) {
-        if(mIsGameOver) return false;
-
         int action = event.getAction();
         if (action == MotionEvent.ACTION_UP){
-
+            if(mIsGameOver) return false;
             int x = (int) event.getX();
             int y = (int) event.getY();
 

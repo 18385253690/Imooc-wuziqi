@@ -24,14 +24,14 @@ private WuziqiPanel wuziqiPanel;
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        if(id == R.id.activity_settings){
+        if(id == R.id.action_settings){
             wuziqiPanel.start();
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 }
